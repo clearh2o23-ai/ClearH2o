@@ -1,327 +1,194 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<title>ClearH₂O Analytical Services | Coming Soon</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ClearH2O Analytical Services | Coming Soon</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
 body{
-
-font-family:Poppins,sans-serif;
-
-background:linear-gradient(135deg,#304998,#42A9E0);
-
-height:100vh;
-
-overflow:hidden;
-
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
-position:relative;
-
+    font-family:'Poppins',sans-serif;
+    background:linear-gradient(135deg,#003366,#005b96,#0077b6,#0096c7);
+    background-size:400% 400%;
+    animation:gradient 12s ease infinite;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+    color:#fff;
 }
 
-/* Background Glow */
-
-body::before{
-
-content:"";
-
-position:absolute;
-
-width:700px;
-
-height:700px;
-
-background:rgba(255,255,255,.08);
-
-border-radius:50%;
-
-top:-250px;
-
-right:-180px;
-
-filter:blur(80px);
-
+@keyframes gradient{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
 }
 
-body::after{
+.background-circle{
+    position:absolute;
+    border-radius:50%;
+    background:rgba(255,255,255,.05);
+    filter:blur(2px);
+}
 
-content:"";
+.circle1{
+    width:350px;
+    height:350px;
+    top:-120px;
+    left:-120px;
+}
 
-position:absolute;
-
-width:600px;
-
-height:600px;
-
-background:rgba(255,255,255,.05);
-
-border-radius:50%;
-
-bottom:-250px;
-
-left:-200px;
-
-filter:blur(80px);
-
+.circle2{
+    width:250px;
+    height:250px;
+    bottom:-80px;
+    right:-80px;
 }
 
 .card{
-
-width:900px;
-
-max-width:92%;
-
-background:rgba(255,255,255,.12);
-
-backdrop-filter:blur(18px);
-
-border:1px solid rgba(255,255,255,.18);
-
-border-radius:24px;
-
-padding:60px;
-
-text-align:center;
-
-box-shadow:0 20px 60px rgba(0,0,0,.30);
-
-position:relative;
-
-z-index:10;
-
+    width:90%;
+    max-width:850px;
+    background:rgba(255,255,255,.10);
+    backdrop-filter:blur(18px);
+    border:1px solid rgba(255,255,255,.18);
+    border-radius:25px;
+    padding:60px;
+    text-align:center;
+    box-shadow:0 25px 60px rgba(0,0,0,.35);
+    position:relative;
+    z-index:5;
 }
 
 .logo{
-
-width:140px;
-
-margin:auto;
-
-margin-bottom:30px;
-
-animation:float 4s ease-in-out infinite;
-
-}
-
-@keyframes float{
-
-0%,100%{
-
-transform:translateY(0);
-
-}
-
-50%{
-
-transform:translateY(-10px);
-
-}
-
+    width:100px;
+    height:100px;
+    margin:auto;
+    margin-bottom:30px;
+    border-radius:50%;
+    background:white;
+    color:#005b96;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:45px;
+    font-weight:700;
+    box-shadow:0 15px 40px rgba(0,0,0,.25);
 }
 
 .company{
-
-font-size:44px;
-
-font-weight:700;
-
-color:white;
-
+    font-size:40px;
+    font-weight:700;
+    letter-spacing:.5px;
 }
 
 .company span{
-
-color:#73C6F5;
-
+    color:#8de8ff;
 }
 
-.subtitle{
-
-font-size:18px;
-
-color:#dfefff;
-
-margin-top:8px;
-
-letter-spacing:2px;
-
-text-transform:uppercase;
-
+.tagline{
+    margin-top:10px;
+    color:#dceeff;
+    font-size:18px;
 }
 
 .line{
-
-width:120px;
-
-height:4px;
-
-background:#73C6F5;
-
-margin:35px auto;
-
-border-radius:20px;
-
+    width:120px;
+    height:4px;
+    background:#8de8ff;
+    margin:30px auto;
+    border-radius:10px;
 }
 
 h2{
-
-font-size:34px;
-
-font-weight:600;
-
-color:white;
-
-margin-bottom:20px;
-
+    font-size:34px;
+    margin-bottom:20px;
+    font-weight:600;
 }
 
 .description{
-
-font-size:18px;
-
-line-height:1.9;
-
-color:#eef7ff;
-
-max-width:700px;
-
-margin:auto;
-
+    color:#eaf7ff;
+    font-size:18px;
+    line-height:1.8;
+    max-width:650px;
+    margin:auto;
 }
 
 .progress{
-
-margin:45px auto;
-
-width:420px;
-
-max-width:90%;
-
-height:10px;
-
-background:rgba(255,255,255,.15);
-
-border-radius:30px;
-
-overflow:hidden;
-
+    width:100%;
+    max-width:420px;
+    height:10px;
+    background:rgba(255,255,255,.15);
+    border-radius:20px;
+    margin:45px auto;
+    overflow:hidden;
 }
 
 .progress div{
-
-height:100%;
-
-background:linear-gradient(90deg,#42A9E0,#73C6F5,#ffffff);
-
-animation:loading 3s infinite;
-
+    height:100%;
+    width:65%;
+    background:linear-gradient(90deg,#00d4ff,#4facfe,#00f2fe);
+    animation:loading 2.5s infinite;
 }
 
 @keyframes loading{
-
-0%{width:10%;}
-
-50%{width:85%;}
-
-100%{width:10%;}
-
-}
-
-.contact{
-
-display:flex;
-
-justify-content:center;
-
-gap:50px;
-
-margin-top:35px;
-
-color:white;
-
-font-size:16px;
-
-flex-wrap:wrap;
-
-}
-
-.contact div{
-
-padding:12px 25px;
-
-border-radius:10px;
-
-background:rgba(255,255,255,.08);
-
+    0%{width:15%;}
+    50%{width:80%;}
+    100%{width:15%;}
 }
 
 .footer{
+    margin-top:20px;
+    color:#d8ecf8;
+    font-size:15px;
+}
 
-margin-top:45px;
+.footer a{
+    color:#fff;
+    text-decoration:none;
+}
 
-font-size:14px;
+.footer a:hover{
+    text-decoration:underline;
+}
 
-color:#d9ecff;
-
+.bottom{
+    margin-top:40px;
+    font-size:13px;
+    color:#d7edf8;
 }
 
 @media(max-width:768px){
 
 .card{
-
-padding:35px 25px;
-
+    padding:40px 25px;
 }
 
 .company{
-
-font-size:30px;
-
+    font-size:28px;
 }
 
 h2{
-
-font-size:25px;
-
+    font-size:26px;
 }
 
 .description{
-
-font-size:16px;
-
+    font-size:16px;
 }
 
 .logo{
-
-width:110px;
-
-}
-
-.contact{
-
-flex-direction:column;
-
-gap:15px;
-
+    width:80px;
+    height:80px;
+    font-size:35px;
 }
 
 }
@@ -332,70 +199,51 @@ gap:15px;
 
 <body>
 
+<div class="background-circle circle1"></div>
+<div class="background-circle circle2"></div>
+
 <div class="card">
 
-<img src="logo.png" class="logo">
-
-<div class="company">
-
-Clear<span>H₂O</span>
-
+<div class="logo">
+H₂O
 </div>
 
-<div class="subtitle">
+<div class="company">
+Clear<span>H2O</span>
+</div>
 
+<div class="tagline">
 Analytical Services
-
 </div>
 
 <div class="line"></div>
 
-<h2>
+<h2>Website Under Construction</h2>
 
-Our Website is Under Construction
-
-</h2>
-
-<div class="description">
-
-We are building a modern digital experience to showcase our laboratory testing, water analysis, environmental monitoring, and analytical services.
-
+<p class="description">
+Our website is currently under development as we prepare to launch a modern platform showcasing our laboratory testing, analytical solutions, and professional services.
 <br><br>
-
-Our team is working diligently to launch a professional platform that reflects our commitment to quality, precision, and scientific excellence.
-
-</div>
+We are committed to delivering a seamless digital experience for our clients and partners.
+</p>
 
 <div class="progress">
-
-<div></div>
-
+    <div></div>
 </div>
 
-<div class="contact">
-
-<div>
+<div class="footer">
 
 📧 info@clearh2o.in
-
-</div>
-
-<div>
+<br><br>
 
 📞 +91 XXXXX XXXXX
 
 </div>
 
-</div>
-
-<div class="footer">
-
-© 2026 ClearH₂O Analytical Services • All Rights Reserved
-
+<div class="bottom">
+© 2026 ClearH2O Analytical Services. All Rights Reserved.
 </div>
 
 </div>
 
 </body>
-
 </html>
